@@ -1,21 +1,31 @@
 import 'package:flutter/material.dart';
 
+// Uygulamanın başlangıç noktası
 void main() {
+  // Ana uygulama widget'ını çalıştırır
   runApp(const KidlinguaApp());
 }
 
+// Uygulamanın kök widget'ı
 class KidlinguaApp extends StatelessWidget {
   const KidlinguaApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // Sağ üstte görünen debug yazısını kaldırır
       debugShowCheckedModeBanner: false,
+
+      // Uygulama adı
       title: 'KidLingua',
+
+      // Uygulamanın genel tema ayarları
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xFFE8F8E0),
         fontFamily: 'Arial',
       ),
+
+      // İlk açılan ekran
       home: const RoleSelectionScreen(),
     );
   }
@@ -25,8 +35,9 @@ class KidlinguaApp extends StatelessWidget {
 /* COLORS */
 /* ---------------------------------------------------------- */
 
+// Uygulama içinde tekrar tekrar kullanılan renklerin tutulduğu sınıf
 class AppColors {
-  static const bg = Color(0xFFDDF7D4);
+  static const bg = Color(0xFFDDF7D4); // genel arka plan
   static const green = Color(0xFF59E77A);
   static const darkGreen = Color(0xFF0A5B20);
   static const textGreen = Color(0xFF126A2B);
@@ -36,13 +47,14 @@ class AppColors {
   static const lightBlue = Color(0xFFD6ECFF);
   static const pink = Color(0xFFFFB0B0);
   static const whiteCard = Colors.white;
-  static const shadow = Color(0x33000000);
+  static const shadow = Color(0x33000000); // gölge rengi
 }
 
 /* ---------------------------------------------------------- */
 /* ROLE SELECTION */
 /* ---------------------------------------------------------- */
 
+// Kullanıcının çocuk mu ebeveyn mi olduğunu seçtiği ilk ekran
 class RoleSelectionScreen extends StatelessWidget {
   const RoleSelectionScreen({super.key});
 
@@ -50,8 +62,11 @@ class RoleSelectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        // Ekranın tamamını kaplar
         width: double.infinity,
         height: double.infinity,
+
+        // Arka plan geçişli renk
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Color(0xFFDDF8D8), Color(0xFFCFF3C8), Color(0xFFBDF0AF)],
@@ -59,12 +74,17 @@ class RoleSelectionScreen extends StatelessWidget {
             end: Alignment.bottomCenter,
           ),
         ),
+
         child: SafeArea(
           child: SingleChildScrollView(
             padding: const EdgeInsets.fromLTRB(20, 24, 20, 24),
+
+            // Tüm içerik dikey olarak yerleştirilir
             child: Column(
               children: [
                 const SizedBox(height: 18),
+
+                // Ana başlık
                 const Text(
                   "Kimsin?",
                   style: TextStyle(
@@ -73,7 +93,10 @@ class RoleSelectionScreen extends StatelessWidget {
                     color: Color(0xFF7A5A00),
                   ),
                 ),
+
                 const SizedBox(height: 10),
+
+                // Alt açıklama
                 const Text(
                   "Yolculuğuna başlamak için bir karakter seç!",
                   textAlign: TextAlign.center,
@@ -84,7 +107,10 @@ class RoleSelectionScreen extends StatelessWidget {
                     color: AppColors.textGreen,
                   ),
                 ),
+
                 const SizedBox(height: 28),
+
+                // Çocuk kartı ve onun üst etiketi aynı anda gösteriliyor
                 Stack(
                   children: [
                     _roleCard(
@@ -100,6 +126,8 @@ class RoleSelectionScreen extends StatelessWidget {
                       descColor: AppColors.textGreen,
                       buttonText: "BAŞLAYALIM!  →",
                       buttonColor: const Color(0xFF8E7600),
+
+                      // Çocuk butonuna basılınca çocuk ana ekranına gider
                       onTap: () {
                         Navigator.push(
                           context,
@@ -109,6 +137,8 @@ class RoleSelectionScreen extends StatelessWidget {
                         );
                       },
                     ),
+
+                    // Kartın üst köşesindeki pembe küçük etiket
                     Positioned(
                       top: 8,
                       right: 10,
@@ -135,7 +165,10 @@ class RoleSelectionScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+
                 const SizedBox(height: 24),
+
+                // Ebeveyn kartı
                 _roleCard(
                   context: context,
                   cardColor: const Color(0xFFDDF4FA),
@@ -149,6 +182,8 @@ class RoleSelectionScreen extends StatelessWidget {
                   descColor: const Color(0xFF15658F),
                   buttonText: "GİRİŞ YAP",
                   buttonColor: AppColors.blue,
+
+                  // Ebeveyn butonuna basılınca ebeveyn ana ekranına gider
                   onTap: () {
                     Navigator.push(
                       context,
@@ -166,6 +201,7 @@ class RoleSelectionScreen extends StatelessWidget {
     );
   }
 
+  // Rol kartını tekrar kullanılabilir şekilde oluşturan yardımcı fonksiyon
   Widget _roleCard({
     required BuildContext context,
     required Color cardColor,
@@ -183,6 +219,8 @@ class RoleSelectionScreen extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.fromLTRB(24, 28, 24, 24),
+
+      // Kart görünümü
       decoration: BoxDecoration(
         color: cardColor,
         borderRadius: BorderRadius.circular(34),
@@ -194,8 +232,10 @@ class RoleSelectionScreen extends StatelessWidget {
           ),
         ],
       ),
+
       child: Column(
         children: [
+          // Karttaki yuvarlak ikon alanı
           Container(
             width: 118,
             height: 118,
@@ -212,7 +252,10 @@ class RoleSelectionScreen extends StatelessWidget {
             ),
             child: Icon(icon, size: 56, color: iconColor),
           ),
+
           const SizedBox(height: 20),
+
+          // Kart başlığı
           Text(
             title,
             style: TextStyle(
@@ -221,7 +264,10 @@ class RoleSelectionScreen extends StatelessWidget {
               color: titleColor,
             ),
           ),
+
           const SizedBox(height: 10),
+
+          // Kart açıklaması
           Text(
             desc,
             textAlign: TextAlign.center,
@@ -232,7 +278,10 @@ class RoleSelectionScreen extends StatelessWidget {
               color: descColor,
             ),
           ),
+
           const SizedBox(height: 24),
+
+          // Kart butonu
           SizedBox(
             width: double.infinity,
             height: 58,
@@ -265,6 +314,8 @@ class RoleSelectionScreen extends StatelessWidget {
 /* CHILD MAIN SHELL */
 /* ---------------------------------------------------------- */
 
+// Çocuk ekranlarının ana gövdesi
+// Alt menü sayesinde sayfalar arasında geçiş yapılır
 class ChildMainScreen extends StatefulWidget {
   const ChildMainScreen({super.key});
 
@@ -273,8 +324,10 @@ class ChildMainScreen extends StatefulWidget {
 }
 
 class _ChildMainScreenState extends State<ChildMainScreen> {
+  // Şu anda seçili olan alt menü index'i
   int selectedIndex = 0;
 
+  // Alt menüde gösterilecek sayfalar
   final List<Widget> pages = const [
     ChildHomePage(),
     ChildTasksPage(),
@@ -285,7 +338,11 @@ class _ChildMainScreenState extends State<ChildMainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.bg,
+
+      // Seçili index'e göre ilgili sayfa açılır
       body: pages[selectedIndex],
+
+      // Alt menü alanı
       bottomNavigationBar: Container(
         margin: const EdgeInsets.fromLTRB(16, 0, 16, 14),
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
@@ -300,9 +357,11 @@ class _ChildMainScreenState extends State<ChildMainScreen> {
             ),
           ],
         ),
+
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            // Home sekmesi
             _bottomItem(
               index: 0,
               current: selectedIndex,
@@ -311,6 +370,8 @@ class _ChildMainScreenState extends State<ChildMainScreen> {
               activeColor: AppColors.yellow,
               onTap: () => setState(() => selectedIndex = 0),
             ),
+
+            // Tasks sekmesi
             _bottomItem(
               index: 1,
               current: selectedIndex,
@@ -319,6 +380,8 @@ class _ChildMainScreenState extends State<ChildMainScreen> {
               activeColor: AppColors.yellow,
               onTap: () => setState(() => selectedIndex = 1),
             ),
+
+            // Learn sekmesi
             _bottomItem(
               index: 2,
               current: selectedIndex,
@@ -333,6 +396,7 @@ class _ChildMainScreenState extends State<ChildMainScreen> {
     );
   }
 
+  // Alt menü öğesini oluşturan yardımcı widget
   Widget _bottomItem({
     required int index,
     required int current,
@@ -341,11 +405,13 @@ class _ChildMainScreenState extends State<ChildMainScreen> {
     required Color activeColor,
     required VoidCallback onTap,
   }) {
+    // Eğer index ile mevcut seçili index aynıysa aktif sekmedir
     final bool isActive = index == current;
 
     return GestureDetector(
       onTap: onTap,
       child: isActive
+          // Aktif görünüm
           ? Container(
               width: 82,
               height: 82,
@@ -376,6 +442,7 @@ class _ChildMainScreenState extends State<ChildMainScreen> {
                 ],
               ),
             )
+          // Pasif görünüm
           : Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -399,6 +466,7 @@ class _ChildMainScreenState extends State<ChildMainScreen> {
 /* CHILD HOME */
 /* ---------------------------------------------------------- */
 
+// Çocuk ana sayfası
 class ChildHomePage extends StatelessWidget {
   const ChildHomePage({super.key});
 
@@ -409,8 +477,11 @@ class ChildHomePage extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(18, 20, 18, 12),
         child: Column(
           children: [
+            // Üst bar
             const _TopBarSmall(title: "KidLingua"),
             const SizedBox(height: 18),
+
+            // Günün kelimesi kartı
             Container(
               width: double.infinity,
               padding: const EdgeInsets.fromLTRB(18, 18, 18, 18),
@@ -430,6 +501,8 @@ class ChildHomePage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 18),
+
+                  // Görsel alanı
                   Container(
                     width: 280,
                     height: 280,
@@ -442,6 +515,8 @@ class ChildHomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 18),
+
+                  // Kelime başlığı
                   const Text(
                     "KUŞ",
                     style: TextStyle(
@@ -452,6 +527,8 @@ class ChildHomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
+
+                  // Alt çizgi efekti
                   Container(
                     width: 80,
                     height: 10,
@@ -463,7 +540,10 @@ class ChildHomePage extends StatelessWidget {
                 ],
               ),
             ),
+
             const SizedBox(height: 18),
+
+            // İlerleme kartı
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(20),
@@ -483,6 +563,7 @@ class ChildHomePage extends StatelessWidget {
                 children: [
                   Row(
                     children: [
+                      // İkon
                       Container(
                         width: 70,
                         height: 70,
@@ -497,6 +578,8 @@ class ChildHomePage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(width: 16),
+
+                      // Yazılar
                       const Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -523,7 +606,10 @@ class ChildHomePage extends StatelessWidget {
                       ),
                     ],
                   ),
+
                   const SizedBox(height: 20),
+
+                  // Sayısal ilerleme
                   const Text(
                     "2 / 3",
                     style: TextStyle(
@@ -533,6 +619,8 @@ class ChildHomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 12),
+
+                  // İlerleme barı
                   ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: const LinearProgressIndicator(
@@ -546,7 +634,10 @@ class ChildHomePage extends StatelessWidget {
                 ],
               ),
             ),
+
             const SizedBox(height: 18),
+
+            // Alt kısım menü kutuları
             Row(
               children: [
                 Expanded(
@@ -581,6 +672,7 @@ class ChildHomePage extends StatelessWidget {
 /* CHILD TASKS */
 /* ---------------------------------------------------------- */
 
+// Çocuğun görev ekranı
 class ChildTasksPage extends StatelessWidget {
   const ChildTasksPage({super.key});
 
@@ -591,8 +683,11 @@ class ChildTasksPage extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(18, 18, 18, 16),
         child: Column(
           children: [
+            // Üst bar
             const _TopBarSmall(title: "Görevlerin"),
             const SizedBox(height: 18),
+
+            // Başlık
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -605,7 +700,10 @@ class ChildTasksPage extends StatelessWidget {
                 ),
               ),
             ),
+
             const SizedBox(height: 14),
+
+            // Bilgilendirme satırı
             const Row(
               children: [
                 Icon(Icons.stars_rounded, color: Colors.green, size: 30),
@@ -620,13 +718,17 @@ class ChildTasksPage extends StatelessWidget {
                 ),
               ],
             ),
+
             const SizedBox(height: 24),
+
+            // Görev kartı
             Container(
               width: double.infinity,
               padding: const EdgeInsets.fromLTRB(20, 22, 20, 22),
               decoration: _mainCardDecoration(),
               child: Column(
                 children: [
+                  // Görev görseli
                   Container(
                     width: 160,
                     height: 160,
@@ -639,8 +741,11 @@ class ChildTasksPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 14),
+
                   _smallPill("YENİ ÖĞREN", const Color(0xFFFFD9DF)),
                   const SizedBox(height: 14),
+
+                  // Görev kelimesi
                   const Text(
                     "Elma",
                     style: TextStyle(
@@ -650,6 +755,8 @@ class ChildTasksPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10),
+
+                  // Görev açıklaması
                   const Text(
                     "Bu meyvenin adını sesli söyleyebilir\nmisin?",
                     textAlign: TextAlign.center,
@@ -661,6 +768,8 @@ class ChildTasksPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 24),
+
+                  // Tamamla butonu
                   _bigButton(
                     text: "✔  Tamamla",
                     color: AppColors.yellow,
@@ -670,7 +779,10 @@ class ChildTasksPage extends StatelessWidget {
                 ],
               ),
             ),
+
             const SizedBox(height: 24),
+
+            // Günlük ilerleme kartı
             Container(
               width: double.infinity,
               padding: const EdgeInsets.fromLTRB(18, 22, 18, 24),
@@ -684,6 +796,7 @@ class ChildTasksPage extends StatelessWidget {
               ),
               child: Column(
                 children: [
+                  // Dairesel ilerleme
                   SizedBox(
                     width: 130,
                     height: 130,
@@ -712,6 +825,7 @@ class ChildTasksPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 24),
+
                   const Text(
                     "Harika Gidiyorsun!",
                     style: TextStyle(
@@ -721,6 +835,7 @@ class ChildTasksPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
+
                   const Text(
                     "2 görev daha yaparsan büyük ödülü\nkazanırsın.",
                     textAlign: TextAlign.center,
@@ -734,7 +849,10 @@ class ChildTasksPage extends StatelessWidget {
                 ],
               ),
             ),
+
             const SizedBox(height: 24),
+
+            // Son aktiviteler başlığı
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -746,7 +864,10 @@ class ChildTasksPage extends StatelessWidget {
                 ),
               ),
             ),
+
             const SizedBox(height: 14),
+
+            // Aktivite kartı 1
             _activityCard(
               leadingEmoji: "🐾",
               title: "Hayvanlar Ünitesi\nTamamlandı",
@@ -754,7 +875,10 @@ class ChildTasksPage extends StatelessWidget {
               iconBg: const Color(0xFF69F28A),
               rightIcon: Icons.check_circle,
             ),
+
             const SizedBox(height: 14),
+
+            // Aktivite kartı 2
             _activityCard(
               leadingEmoji: "🏅",
               title: "Hızlı Okuyucu Rozeti\nKazanıldı",
@@ -768,6 +892,7 @@ class ChildTasksPage extends StatelessWidget {
     );
   }
 
+  // Aktivite kartını oluşturan yardımcı fonksiyon
   Widget _activityCard({
     required String leadingEmoji,
     required String title,
@@ -785,6 +910,7 @@ class ChildTasksPage extends StatelessWidget {
       ),
       child: Row(
         children: [
+          // Sol ikon dairesi
           Container(
             width: 66,
             height: 66,
@@ -796,7 +922,10 @@ class ChildTasksPage extends StatelessWidget {
               child: Text(leadingEmoji, style: const TextStyle(fontSize: 30)),
             ),
           ),
+
           const SizedBox(width: 16),
+
+          // Yazı alanı
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -821,6 +950,8 @@ class ChildTasksPage extends StatelessWidget {
               ],
             ),
           ),
+
+          // Sağ kontrol ikonu
           Icon(rightIcon, color: Colors.green, size: 34),
         ],
       ),
@@ -832,6 +963,7 @@ class ChildTasksPage extends StatelessWidget {
 /* CHILD LEARN */
 /* ---------------------------------------------------------- */
 
+// Çocuğun öğrenme ekranı
 class ChildLearnPage extends StatelessWidget {
   const ChildLearnPage({super.key});
 
@@ -842,8 +974,11 @@ class ChildLearnPage extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(18, 18, 18, 16),
         child: Column(
           children: [
+            // Sağ üst kapatma butonu
             const _TopCloseButton(),
             const SizedBox(height: 10),
+
+            // Hayvan öğrenme kartı
             Container(
               width: double.infinity,
               padding: const EdgeInsets.fromLTRB(18, 18, 18, 22),
@@ -862,8 +997,10 @@ class ChildLearnPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 14),
+
                   _smallPill("HAYVANLAR", const Color(0xFFAED0FF)),
                   const SizedBox(height: 14),
+
                   const Text(
                     "Köpek",
                     style: TextStyle(
@@ -873,6 +1010,7 @@ class ChildLearnPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
+
                   const Text(
                     "Hav hav! Bu tatlı arkadaşın ismi ne?",
                     textAlign: TextAlign.center,
@@ -883,6 +1021,7 @@ class ChildLearnPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
+
                   _bigButton(
                     text: "🎤  Söyle",
                     color: const Color(0xFF63EC7D),
@@ -892,7 +1031,10 @@ class ChildLearnPage extends StatelessWidget {
                 ],
               ),
             ),
+
             const SizedBox(height: 18),
+
+            // Renkler kartı
             Container(
               width: double.infinity,
               padding: const EdgeInsets.fromLTRB(18, 18, 18, 22),
@@ -911,8 +1053,10 @@ class ChildLearnPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 14),
+
                   _smallPill("RENKLER", const Color(0xFF63EC7D)),
                   const SizedBox(height: 14),
+
                   const Text(
                     "Gökkuşağı",
                     style: TextStyle(
@@ -922,6 +1066,7 @@ class ChildLearnPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
+
                   const Text(
                     "En sevdiğin renk hangisi?",
                     textAlign: TextAlign.center,
@@ -932,6 +1077,8 @@ class ChildLearnPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 18),
+
+                  // Renk seçenekleri
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -949,13 +1096,17 @@ class ChildLearnPage extends StatelessWidget {
                 ],
               ),
             ),
+
             const SizedBox(height: 18),
+
+            // Güneş kartı
             Container(
               width: double.infinity,
               padding: const EdgeInsets.fromLTRB(18, 18, 18, 24),
               decoration: _mainCardDecoration(),
               child: Column(
                 children: [
+                  // Sağ ve sol gezinme ikonları
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -978,6 +1129,8 @@ class ChildLearnPage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 12),
+
+                  // Görsel alan
                   Container(
                     width: double.infinity,
                     height: 220,
@@ -994,6 +1147,7 @@ class ChildLearnPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 18),
+
                   const Text(
                     "GÜNEŞ",
                     style: TextStyle(
@@ -1004,6 +1158,7 @@ class ChildLearnPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
+
                   const Text(
                     "The Sun",
                     style: TextStyle(
@@ -1013,6 +1168,7 @@ class ChildLearnPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 22),
+
                   _bigButton(
                     text: "🔊  Dinle",
                     color: AppColors.yellow,
@@ -1020,6 +1176,8 @@ class ChildLearnPage extends StatelessWidget {
                     onTap: () {},
                   ),
                   const SizedBox(height: 22),
+
+                  // Alt bilgi kutuları
                   Row(
                     children: const [
                       Expanded(
@@ -1055,6 +1213,8 @@ class ChildLearnPage extends StatelessWidget {
 /* PARENT SHELL */
 /* ---------------------------------------------------------- */
 
+// Ebeveyn ekranlarının ana kabuğu
+// Alt menü ile farklı ebeveyn sayfaları açılır
 class ParentScreen extends StatefulWidget {
   const ParentScreen({super.key});
 
@@ -1063,8 +1223,10 @@ class ParentScreen extends StatefulWidget {
 }
 
 class _ParentScreenState extends State<ParentScreen> {
+  // Seçili sekme index'i
   int selectedIndex = 0;
 
+  // Alt menüdeki ebeveyn sayfaları
   final List<Widget> pages = const [
     ParentDashboardPage(),
     ParentTrackingPage(),
@@ -1075,7 +1237,11 @@ class _ParentScreenState extends State<ParentScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF4F5F7),
+
+      // Seçilen index'e göre ilgili sayfa açılır
       body: pages[selectedIndex],
+
+      // Ebeveyn alt menüsü
       bottomNavigationBar: Container(
         margin: const EdgeInsets.fromLTRB(16, 0, 16, 14),
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
@@ -1090,6 +1256,7 @@ class _ParentScreenState extends State<ParentScreen> {
             ),
           ],
         ),
+
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -1120,6 +1287,7 @@ class _ParentScreenState extends State<ParentScreen> {
     );
   }
 
+  // Ebeveyn alt menü öğesi
   Widget _parentBottomItem({
     required int index,
     required int current,
@@ -1170,6 +1338,7 @@ class _ParentScreenState extends State<ParentScreen> {
 /* PARENT DASHBOARD */
 /* ---------------------------------------------------------- */
 
+// Ebeveyn ana panel ekranı
 class ParentDashboardPage extends StatelessWidget {
   const ParentDashboardPage({super.key});
 
@@ -1180,11 +1349,15 @@ class ParentDashboardPage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.fromLTRB(20, 18, 20, 20),
+
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Üst başlık alanı
               const _ParentTopHeader(title: "Ebeveyn Kontrolü"),
               const SizedBox(height: 26),
+
+              // Karşılama başlığı
               const Text(
                 "Merhaba, Deniz’in\nAnnesi",
                 style: TextStyle(
@@ -1195,6 +1368,8 @@ class ParentDashboardPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 14),
+
+              // Açıklama metni
               const Text(
                 "Deniz bugün harika bir ilerleme kaydetti! Haftalık hedefine ulaşmak için sadece 3 ünite kaldı.",
                 style: TextStyle(
@@ -1205,12 +1380,15 @@ class ParentDashboardPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
+
+              // Haftalık hedef kartı
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.fromLTRB(20, 24, 20, 28),
                 decoration: _parentCardDecoration(),
                 child: Column(
                   children: [
+                    // Büyük dairesel ilerleme alanı
                     SizedBox(
                       width: 260,
                       height: 260,
@@ -1229,6 +1407,8 @@ class ParentDashboardPage extends StatelessWidget {
                               ),
                             ),
                           ),
+
+                          // Orta içerik
                           Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -1247,6 +1427,7 @@ class ParentDashboardPage extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(height: 12),
+
                               Container(
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 16,
@@ -1267,6 +1448,7 @@ class ParentDashboardPage extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(height: 12),
+
                               const Text(
                                 "75%",
                                 style: TextStyle(
@@ -1282,6 +1464,7 @@ class ParentDashboardPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 22),
+
                     const Text(
                       "Deniz bu hafta toplam 4.5 saat çalıştı. Mevcut tempoyla Pazar günkü hedefine ulaşacak.",
                       textAlign: TextAlign.center,
@@ -1295,7 +1478,10 @@ class ParentDashboardPage extends StatelessWidget {
                   ],
                 ),
               ),
+
               const SizedBox(height: 18),
+
+              // Küçük bilgi kartları
               Row(
                 children: const [
                   Expanded(
@@ -1315,7 +1501,10 @@ class ParentDashboardPage extends StatelessWidget {
                   ),
                 ],
               ),
+
               const SizedBox(height: 18),
+
+              // Dil gelişim puanı kartı
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.fromLTRB(20, 22, 20, 24),
@@ -1332,6 +1521,7 @@ class ParentDashboardPage extends StatelessWidget {
                       child: Icon(Icons.star_rounded, color: Color(0xFF0A7D7E)),
                     ),
                     const SizedBox(height: 18),
+
                     const Text(
                       "Dil Gelişim Puanı",
                       style: TextStyle(
@@ -1341,6 +1531,7 @@ class ParentDashboardPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 10),
+
                     const Text(
                       "Yaş grubundaki akranlarından %15 daha hızlı ilerliyor.",
                       style: TextStyle(
@@ -1350,6 +1541,7 @@ class ParentDashboardPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 24),
+
                     const Text(
                       "860",
                       style: TextStyle(
@@ -1359,6 +1551,7 @@ class ParentDashboardPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 20),
+
                     ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: const LinearProgressIndicator(
@@ -1373,7 +1566,10 @@ class ParentDashboardPage extends StatelessWidget {
                   ],
                 ),
               ),
+
               const SizedBox(height: 18),
+
+              // İki kutulu metrik alanı
               Row(
                 children: const [
                   Expanded(
@@ -1397,7 +1593,10 @@ class ParentDashboardPage extends StatelessWidget {
                   ),
                 ],
               ),
+
               const SizedBox(height: 14),
+
+              // Geniş metrik kutusu
               const _ParentMetricWideBox(
                 icon: Icons.schedule_rounded,
                 title: "Günlük Kullanım",
@@ -1405,9 +1604,14 @@ class ParentDashboardPage extends StatelessWidget {
                 color: Color(0xFFAED0FF),
                 valueColor: AppColors.blue,
               ),
+
               const SizedBox(height: 22),
+
+              // Son aktiviteler başlığı
               _parentSectionTitle("Son Aktiviteler", "Hepsini Gör"),
               const SizedBox(height: 12),
+
+              // Aktivite kartları
               const _ParentActivityCard(
                 emoji: "🐾",
                 title: "Hayvanlar\nÜnitesi\nTamamlandı",
@@ -1416,6 +1620,7 @@ class ParentDashboardPage extends StatelessWidget {
                 color: Color(0xFFAED0FF),
               ),
               const SizedBox(height: 14),
+
               const _ParentActivityCard(
                 emoji: "🏅",
                 title: "Hızlı Okuyucu\nRozeti Kazanıldı",
@@ -1423,7 +1628,10 @@ class ParentDashboardPage extends StatelessWidget {
                 time: "5 saat\nönce",
                 color: Color(0xFFF1C67D),
               ),
+
               const SizedBox(height: 18),
+
+              // Haftalık ipucu kartı
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.fromLTRB(22, 24, 22, 24),
@@ -1480,6 +1688,8 @@ class ParentDashboardPage extends StatelessWidget {
 /* PARENT TRACKING */
 /* ---------------------------------------------------------- */
 
+// Ebeveynin takip ekranı
+// Grafikler ve kategori ilerlemeleri burada gösterilir
 class ParentTrackingPage extends StatelessWidget {
   const ParentTrackingPage({super.key});
 
@@ -1490,17 +1700,22 @@ class ParentTrackingPage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.fromLTRB(20, 18, 20, 20),
+
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const _ParentTopHeader(title: "Ebeveyn Kontrolü"),
               const SizedBox(height: 24),
+
+              // Haftalık öğrenim başlığı
               _parentSectionTitle(
                 "Haftalık Kelime\nÖğrenimi",
                 "SON 7\nGÜN",
                 pill: true,
               ),
               const SizedBox(height: 14),
+
+              // Sütun grafik kartı
               Container(
                 width: double.infinity,
                 height: 260,
@@ -1512,6 +1727,8 @@ class ParentTrackingPage extends StatelessWidget {
                       child: _WeeklyBarsChart(),
                     ),
                     const SizedBox(height: 14),
+
+                    // Gün isimleri
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: const [
@@ -1544,9 +1761,14 @@ class ParentTrackingPage extends StatelessWidget {
                   ],
                 ),
               ),
+
               const SizedBox(height: 18),
+
+              // Trend grafiği başlığı
               _parentSectionTitle("Dil Gelişim Trendi", "AYLIK", pill: true),
               const SizedBox(height: 14),
+
+              // Çizgi grafik kartı
               Container(
                 width: double.infinity,
                 height: 330,
@@ -1560,6 +1782,8 @@ class ParentTrackingPage extends StatelessWidget {
                         child: _LineTrendChart(),
                       ),
                     ),
+
+                    // Grafik üzerindeki bilgi etiketi
                     Positioned(
                       right: 30,
                       top: 94,
@@ -1592,7 +1816,10 @@ class ParentTrackingPage extends StatelessWidget {
                   ],
                 ),
               ),
+
               const SizedBox(height: 18),
+
+              // Kategori başlığı
               const Text(
                 "Kategori Detayları",
                 style: TextStyle(
@@ -1602,6 +1829,8 @@ class ParentTrackingPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 14),
+
+              // Kategori ilerleme kartları
               const _CategoryProgressCard(
                 emoji: "🐾",
                 title: "Hayvanlar",
@@ -1612,6 +1841,7 @@ class ParentTrackingPage extends StatelessWidget {
                 iconBg: Color(0xFFAED0FF),
               ),
               const SizedBox(height: 14),
+
               const _CategoryProgressCard(
                 emoji: "🎨",
                 title: "Renkler",
@@ -1622,6 +1852,7 @@ class ParentTrackingPage extends StatelessWidget {
                 iconBg: Color(0xFF8DE6E4),
               ),
               const SizedBox(height: 14),
+
               const _CategoryProgressCard(
                 emoji: "🍎",
                 title: "Meyveler",
@@ -1631,7 +1862,10 @@ class ParentTrackingPage extends StatelessWidget {
                 barColor: Color(0xFF9A6A00),
                 iconBg: Color(0xFFF1C67D),
               ),
+
               const SizedBox(height: 18),
+
+              // En çok tekrar edilenler kartı
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.fromLTRB(20, 22, 20, 24),
@@ -1648,11 +1882,15 @@ class ParentTrackingPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 18),
+
                     _repeatRow("01", "Köpek / Dog", "42 kez"),
                     _repeatRow("02", "Elma / Apple", "38 kez"),
                     _repeatRow("03", "Mavi / Blue", "29 kez"),
                     _repeatRow("04", "Kedi / Cat", "21 kez"),
+
                     const SizedBox(height: 20),
+
+                    // Rapor indirme butonu
                     SizedBox(
                       width: double.infinity,
                       height: 58,
@@ -1684,6 +1922,7 @@ class ParentTrackingPage extends StatelessWidget {
     );
   }
 
+  // Tekrar edilen kelimeler tablosundaki satırı oluşturan yardımcı fonksiyon
   Widget _repeatRow(String no, String word, String count) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 14),
@@ -1691,6 +1930,7 @@ class ParentTrackingPage extends StatelessWidget {
         children: [
           Row(
             children: [
+              // Sıra numarası
               SizedBox(
                 width: 54,
                 child: Text(
@@ -1702,6 +1942,8 @@ class ParentTrackingPage extends StatelessWidget {
                   ),
                 ),
               ),
+
+              // Kelime
               Expanded(
                 child: Text(
                   word,
@@ -1712,6 +1954,8 @@ class ParentTrackingPage extends StatelessWidget {
                   ),
                 ),
               ),
+
+              // Sayaç
               Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
@@ -1737,6 +1981,7 @@ class ParentTrackingPage extends StatelessWidget {
               ),
             ],
           ),
+
           const SizedBox(height: 12),
           const Divider(height: 1, color: Color(0xFFE7EBEF)),
         ],
@@ -1749,6 +1994,7 @@ class ParentTrackingPage extends StatelessWidget {
 /* PARENT SETTINGS */
 /* ---------------------------------------------------------- */
 
+// Ebeveyn ayarlar ekranı
 class ParentSettingsPage extends StatelessWidget {
   const ParentSettingsPage({super.key});
 
@@ -1759,11 +2005,13 @@ class ParentSettingsPage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.fromLTRB(20, 18, 20, 20),
+
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const _ParentTopHeader(title: "Ebeveyn Kontrolü"),
               const SizedBox(height: 26),
+
               const Text(
                 "KONTROL PANELİ",
                 style: TextStyle(
@@ -1774,6 +2022,7 @@ class ParentSettingsPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
+
               const Text(
                 "Hoş geldiniz, Elif Hanım",
                 style: TextStyle(
@@ -1783,6 +2032,7 @@ class ParentSettingsPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 12),
+
               const Text(
                 "Çocuğunuzun dil öğrenme yolculuğunu buradan yönetebilirsiniz.",
                 style: TextStyle(
@@ -1791,7 +2041,10 @@ class ParentSettingsPage extends StatelessWidget {
                   color: Color(0xFF646B75),
                 ),
               ),
+
               const SizedBox(height: 24),
+
+              // Ekran süresi kartı
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(18),
@@ -1810,6 +2063,7 @@ class ParentSettingsPage extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 16),
+
                         const Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -1833,6 +2087,8 @@ class ParentSettingsPage extends StatelessWidget {
                             ],
                           ),
                         ),
+
+                        // Aç/kapat anahtarı
                         Switch(
                           value: true,
                           onChanged: (_) {},
@@ -1842,6 +2098,8 @@ class ParentSettingsPage extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 20),
+
+                    // Süre seçme alanı
                     Container(
                       width: double.infinity,
                       padding: const EdgeInsets.all(18),
@@ -1875,6 +2133,8 @@ class ParentSettingsPage extends StatelessWidget {
                               ],
                             ),
                           ),
+
+                          // Azalt ve artır butonları
                           _circleActionButton(Icons.remove),
                           const SizedBox(width: 12),
                           _circleActionButton(Icons.add, teal: true),
@@ -1884,7 +2144,10 @@ class ParentSettingsPage extends StatelessWidget {
                   ],
                 ),
               ),
+
               const SizedBox(height: 18),
+
+              // Günlük görev sayısı kartı
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(18),
@@ -1904,6 +2167,7 @@ class ParentSettingsPage extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(width: 16),
+
                         const Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -1930,6 +2194,7 @@ class ParentSettingsPage extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 20),
+
                     Row(
                       children: [
                         const Text(
@@ -1941,6 +2206,7 @@ class ParentSettingsPage extends StatelessWidget {
                           ),
                         ),
                         const Spacer(),
+
                         Container(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 14,
@@ -1960,7 +2226,10 @@ class ParentSettingsPage extends StatelessWidget {
                         ),
                       ],
                     ),
+
                     const SizedBox(height: 16),
+
+                    // Görev sayısı slider'ı
                     SliderTheme(
                       data: SliderTheme.of(context).copyWith(
                         activeTrackColor: const Color(0xFFF1C67D),
@@ -1976,6 +2245,7 @@ class ParentSettingsPage extends StatelessWidget {
                         onChanged: (_) {},
                       ),
                     ),
+
                     const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 4),
                       child: Row(
@@ -2001,7 +2271,10 @@ class ParentSettingsPage extends StatelessWidget {
                   ],
                 ),
               ),
+
               const SizedBox(height: 18),
+
+              // Özel görev belirleme kartı
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.fromLTRB(22, 24, 22, 24),
@@ -2020,6 +2293,7 @@ class ParentSettingsPage extends StatelessWidget {
                         color: Colors.white.withOpacity(0.08),
                       ),
                     ),
+
                     Center(
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -2033,6 +2307,7 @@ class ParentSettingsPage extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 12),
+
                           const Text(
                             "Çocuğunuz için bugün öğrenmesini istediğiniz özel kelimeleri veya cümleleri tanımlayın.",
                             textAlign: TextAlign.center,
@@ -2043,6 +2318,7 @@ class ParentSettingsPage extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 22),
+
                           Container(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 28,
@@ -2067,7 +2343,10 @@ class ParentSettingsPage extends StatelessWidget {
                   ],
                 ),
               ),
+
               const SizedBox(height: 18),
+
+              // Liste şeklinde ayar seçenekleri
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(0),
@@ -2094,7 +2373,10 @@ class ParentSettingsPage extends StatelessWidget {
                   ],
                 ),
               ),
+
               const SizedBox(height: 18),
+
+              // En alttaki bilgilendirme kutusu
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(22),
@@ -2120,6 +2402,7 @@ class ParentSettingsPage extends StatelessWidget {
     );
   }
 
+  // Artı ve eksi için dairesel buton oluşturan yardımcı widget
   Widget _circleActionButton(IconData icon, {bool teal = false}) {
     return Container(
       width: 58,
@@ -2142,10 +2425,12 @@ class ParentSettingsPage extends StatelessWidget {
 /* PARENT HELPERS */
 /* ---------------------------------------------------------- */
 
+// Ebeveyn ekranlarında üstte görünen ortak başlık alanı
 class _ParentTopHeader extends StatelessWidget {
   final String title;
   const _ParentTopHeader({required this.title});
 
+  // Sağ üstteki X ile rol seçim ekranına geri döner
   void _goToRoleSelection(BuildContext context) {
     Navigator.pushAndRemoveUntil(
       context,
@@ -2160,6 +2445,7 @@ class _ParentTopHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        // Sol taraftaki profil dairesi
         Container(
           width: 58,
           height: 58,
@@ -2172,6 +2458,8 @@ class _ParentTopHeader extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 12),
+
+        // Başlık
         Text(
           title,
           style: const TextStyle(
@@ -2181,12 +2469,16 @@ class _ParentTopHeader extends StatelessWidget {
           ),
         ),
         const Spacer(),
+
+        // Bildirim ikonu
         const Icon(
           Icons.notifications_none_rounded,
           color: Color(0xFF6A717B),
           size: 30,
         ),
         const SizedBox(width: 12),
+
+        // Kapatma butonu
         GestureDetector(
           onTap: () => _goToRoleSelection(context),
           child: Container(
@@ -2204,6 +2496,7 @@ class _ParentTopHeader extends StatelessWidget {
   }
 }
 
+// Bölüm başlığı oluşturan yardımcı fonksiyon
 Widget _parentSectionTitle(String title, String right, {bool pill = false}) {
   return Row(
     children: [
@@ -2218,6 +2511,8 @@ Widget _parentSectionTitle(String title, String right, {bool pill = false}) {
           ),
         ),
       ),
+
+      // Sağ tarafta ister normal yazı ister etiket görünümü gösterilir
       pill
           ? Container(
               padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
@@ -2247,6 +2542,7 @@ Widget _parentSectionTitle(String title, String right, {bool pill = false}) {
   );
 }
 
+// Ebeveyn kartları için ortak dekorasyon
 BoxDecoration _parentCardDecoration() {
   return BoxDecoration(
     color: Colors.white,
@@ -2261,6 +2557,7 @@ BoxDecoration _parentCardDecoration() {
   );
 }
 
+// Küçük istatistik kartı
 class _ParentMiniStatCard extends StatelessWidget {
   final String title;
   final Color color;
@@ -2294,6 +2591,7 @@ class _ParentMiniStatCard extends StatelessWidget {
   }
 }
 
+// Kareye yakın metrik kutusu
 class _ParentMetricBox extends StatelessWidget {
   final IconData icon;
   final String title;
@@ -2346,6 +2644,7 @@ class _ParentMetricBox extends StatelessWidget {
   }
 }
 
+// Geniş metrik kutusu
 class _ParentMetricWideBox extends StatelessWidget {
   final IconData icon;
   final String title;
@@ -2398,6 +2697,7 @@ class _ParentMetricWideBox extends StatelessWidget {
   }
 }
 
+// Son aktiviteler kartı
 class _ParentActivityCard extends StatelessWidget {
   final String emoji;
   final String title;
@@ -2434,6 +2734,7 @@ class _ParentActivityCard extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 16),
+
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -2459,7 +2760,9 @@ class _ParentActivityCard extends StatelessWidget {
               ],
             ),
           ),
+
           const SizedBox(width: 10),
+
           Text(
             time,
             textAlign: TextAlign.right,
@@ -2476,6 +2779,7 @@ class _ParentActivityCard extends StatelessWidget {
   }
 }
 
+// Kategori ilerleme kartı
 class _CategoryProgressCard extends StatelessWidget {
   final String emoji;
   final String title;
@@ -2517,6 +2821,7 @@ class _CategoryProgressCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 16),
+
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -2540,6 +2845,7 @@ class _CategoryProgressCard extends StatelessWidget {
                   ],
                 ),
               ),
+
               Text(
                 percentText,
                 style: TextStyle(
@@ -2550,7 +2856,9 @@ class _CategoryProgressCard extends StatelessWidget {
               ),
             ],
           ),
+
           const SizedBox(height: 16),
+
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: LinearProgressIndicator(
@@ -2566,6 +2874,7 @@ class _CategoryProgressCard extends StatelessWidget {
   }
 }
 
+// Ayar listesi elemanı
 class _SettingsItem extends StatelessWidget {
   final String title;
   final String sub;
@@ -2612,18 +2921,20 @@ class _SettingsItem extends StatelessWidget {
   }
 }
 
+// Haftalık sütun grafiği
 class _WeeklyBarsChart extends StatelessWidget {
   const _WeeklyBarsChart();
 
   @override
   Widget build(BuildContext context) {
+    // Her gün için sütun yükseklikleri
     final heights = [70.0, 110.0, 90.0, 150.0, 80.0, 120.0, 170.0];
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: List.generate(7, (index) {
-        final isActive = index == 3;
+        final isActive = index == 3; // Perşembe aktif gibi gösteriliyor
         return Container(
           width: 26,
           height: heights[index],
@@ -2638,6 +2949,7 @@ class _WeeklyBarsChart extends StatelessWidget {
   }
 }
 
+// Çizgi grafik widget'ı
 class _LineTrendChart extends StatelessWidget {
   const _LineTrendChart();
 
@@ -2650,18 +2962,22 @@ class _LineTrendChart extends StatelessWidget {
   }
 }
 
+// Çizgi grafiği çizen custom painter
 class _LineChartPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
+    // Izgara çizgileri için paint
     final gridPaint = Paint()
       ..color = const Color(0xFFEAECEF)
       ..strokeWidth = 1;
 
+    // Yatay yardımcı çizgiler
     for (int i = 1; i < 5; i++) {
       final y = size.height * i / 5;
       canvas.drawLine(Offset(0, y), Offset(size.width, y), gridPaint);
     }
 
+    // Eğri çizgi yolu
     final path = Path();
     path.moveTo(10, size.height - 30);
     path.quadraticBezierTo(
@@ -2689,11 +3005,13 @@ class _LineChartPainter extends CustomPainter {
       30,
     );
 
+    // Çizginin altını doldurmak için alan yolu
     final fillPath = Path.from(path)
       ..lineTo(size.width - 12, size.height)
       ..lineTo(10, size.height)
       ..close();
 
+    // Alt gölgelendirme
     final fillPaint = Paint()
       ..shader = const LinearGradient(
         colors: [
@@ -2706,6 +3024,7 @@ class _LineChartPainter extends CustomPainter {
 
     canvas.drawPath(fillPath, fillPaint);
 
+    // Ana çizgi için paint
     final linePaint = Paint()
       ..color = const Color(0xFF9A6A00)
       ..strokeWidth = 5
@@ -2722,6 +3041,7 @@ class _LineChartPainter extends CustomPainter {
 /* COMMON WIDGETS */
 /* ---------------------------------------------------------- */
 
+// Çocuk ekranlarında kullanılan ortak arka plan scaffold'ı
 class KidBgScaffold extends StatelessWidget {
   final Widget child;
 
@@ -2734,6 +3054,8 @@ class KidBgScaffold extends StatelessWidget {
       body: Container(
         width: double.infinity,
         height: double.infinity,
+
+        // Çocuk ekranları için arka plan gradient
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Color(0xFFDDF8D8), Color(0xFFCFF3C8)],
@@ -2741,16 +3063,19 @@ class KidBgScaffold extends StatelessWidget {
             end: Alignment.bottomCenter,
           ),
         ),
+
         child: SafeArea(child: child),
       ),
     );
   }
 }
 
+// Sağ üstte kullanılan kapatma butonu
 class _TopCloseButton extends StatelessWidget {
   final bool compact;
   const _TopCloseButton({this.compact = false});
 
+  // Tıklandığında rol seçim ekranına döner
   void _goToRoleSelection(BuildContext context) {
     Navigator.pushAndRemoveUntil(
       context,
@@ -2781,6 +3106,7 @@ class _TopCloseButton extends StatelessWidget {
   }
 }
 
+// Çocuk ekranlarında üst kısımda görünen küçük bar
 class _TopBarSmall extends StatelessWidget {
   final String title;
   const _TopBarSmall({required this.title});
@@ -2789,6 +3115,7 @@ class _TopBarSmall extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
+        // Sol emoji profil alanı
         Container(
           width: 58,
           height: 58,
@@ -2801,6 +3128,8 @@ class _TopBarSmall extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 14),
+
+        // Başlık
         Text(
           title,
           style: const TextStyle(
@@ -2810,18 +3139,23 @@ class _TopBarSmall extends StatelessWidget {
           ),
         ),
         const Spacer(),
+
+        // Seri/ateş ikonu
         const Icon(
           Icons.local_fire_department_rounded,
           color: AppColors.yellowDark,
           size: 30,
         ),
         const SizedBox(width: 10),
+
+        // Kapatma butonu
         const _TopCloseButton(compact: true),
       ],
     );
   }
 }
 
+// Küçük bilgi kartı
 class _miniInfoCard extends StatelessWidget {
   final Color color;
   final IconData icon;
@@ -2870,6 +3204,7 @@ class _miniInfoCard extends StatelessWidget {
   }
 }
 
+// Renk noktası
 class _colorDot extends StatelessWidget {
   final Color color;
   final bool plus;
@@ -2889,6 +3224,7 @@ class _colorDot extends StatelessWidget {
   }
 }
 
+// Küçük etiket/pill widget'ı
 Widget _smallPill(String text, Color color) {
   return Container(
     padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
@@ -2909,6 +3245,7 @@ Widget _smallPill(String text, Color color) {
   );
 }
 
+// İçinde ikon da olan küçük buton/pill
 Widget _iconButtonPill({
   required String label,
   required IconData icon,
@@ -2946,6 +3283,7 @@ Widget _iconButtonPill({
   );
 }
 
+// Büyük ana buton widget'ı
 Widget _bigButton({
   required String text,
   required Color color,
@@ -2977,6 +3315,7 @@ Widget _bigButton({
   );
 }
 
+// Kare biçimli menü kartı
 Widget _squareMenuCard({
   required Color color,
   required IconData icon,
@@ -3019,6 +3358,7 @@ Widget _squareMenuCard({
   );
 }
 
+// Çocuk ekranlarında kullanılan ortak beyaz kart dekorasyonu
 BoxDecoration _mainCardDecoration() {
   return BoxDecoration(
     color: Colors.white,
