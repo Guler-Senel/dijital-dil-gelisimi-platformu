@@ -1,0 +1,333 @@
+{
+  "project": "KidLingua",
+  "version": "1.0-video-catalog-by-age",
+  "createdDate": "2026-05-03",
+  "mainRule": "Video içerikleri yaş grubuna göre filtrelenmeli, kategori sekmeleri Şarkılar / Çizgi Film / Dersler şeklinde tutulmalı.",
+  "copyrightRule": "Telifli videolar uygulama dosyası olarak indirilmemeli; resmi link, resmi player veya izinli kullanım tercih edilmeli.",
+  "videosByAgeRange": {
+    "0-3": [
+      {
+        "videoId": "vid_0_3_01",
+        "title": "Akıllı Tavşan Momo",
+        "ageRange": "0-3",
+        "category": "Çizgi Film",
+        "sourceOwner": "TRT Çocuk",
+        "sourceUrl": "https://www.trtcocuk.net.tr/akilli-tavsan-momo",
+        "targetSkills": [
+          "dostluk",
+          "yardımlaşma",
+          "basit olay takibi"
+        ],
+        "integrationNotes": "Kısa bölüm seçilmeli; ebeveyn eşliği önerilir.",
+        "thumbnailFileSuggested": "assets/images/videos/0_3/akilli_tavsan_momo.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_0_3_02",
+        "title": "Canım Kardeşim",
+        "ageRange": "0-3",
+        "category": "Çizgi Film",
+        "sourceOwner": "TRT Çocuk",
+        "sourceUrl": "https://www.trtcocuk.net.tr/canim-kardesim",
+        "targetSkills": [
+          "aile",
+          "günlük yaşam",
+          "kardeşlik"
+        ],
+        "integrationNotes": "Daha çok 3 yaşa yakın çocuklar için kısa kesitler.",
+        "thumbnailFileSuggested": "assets/images/videos/0_3/canim_kardesim.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_0_3_03",
+        "title": "Kukuli 3. Bölüm",
+        "ageRange": "0-3",
+        "category": "Şarkı/Çizgi Film",
+        "sourceOwner": "TRT Çocuk",
+        "sourceUrl": "https://www.trtcocuk.net.tr/video/kukuli-3",
+        "targetSkills": [
+          "ritim",
+          "kelime tekrarı",
+          "basit komutlar"
+        ],
+        "integrationNotes": "2-4 dakikalık kesitler seçilmeli.",
+        "thumbnailFileSuggested": "assets/images/videos/0_3/kukuli_3_bolum.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_0_3_04",
+        "title": "Kukuli Renkler Şarkısı",
+        "ageRange": "0-3",
+        "category": "Şarkılar",
+        "sourceOwner": "Kukuli YouTube",
+        "sourceUrl": "https://www.youtube.com/watch?v=UZITtQgqLgk",
+        "targetSkills": [
+          "renkler",
+          "dinleme",
+          "tekrar"
+        ],
+        "integrationNotes": "YouTube linki; reklam/güvenlik için YouTube Kids/ebeveyn kontrolü önerilir.",
+        "thumbnailFileSuggested": "assets/images/videos/0_3/kukuli_renkler_sarkisi.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_0_3_05",
+        "title": "TRT Çocuk Kitaplık: Oku, Dinle",
+        "ageRange": "0-3",
+        "category": "Sesli/Animasyonlu Kitap",
+        "sourceOwner": "TRT",
+        "sourceUrl": "https://apps.apple.com/tr/app/trt-%C3%A7ocuk-kitapl%C4%B1k-oku-dinle/id1549968402",
+        "targetSkills": [
+          "dinleme",
+          "görsel takip"
+        ],
+        "integrationNotes": "4+ olarak listelendiği için 0-3 için sadece ebeveyn seçimiyle kullanılmalı.",
+        "thumbnailFileSuggested": "assets/images/videos/0_3/trt_cocuk_kitaplik_oku_dinle.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      }
+    ],
+    "3-6": [
+      {
+        "videoId": "vid_3_6_01",
+        "title": "Ege ile Gaga",
+        "ageRange": "3-6",
+        "category": "Çizgi Film/Ders",
+        "sourceOwner": "TRT Çocuk",
+        "sourceUrl": "https://www.trtcocuk.net.tr/ege-ile-gaga",
+        "targetSkills": [
+          "doğa",
+          "keşif",
+          "soru sorma"
+        ],
+        "integrationNotes": "Doğa ve hayvan üniteleriyle eşleştirilebilir.",
+        "thumbnailFileSuggested": "assets/images/videos/3_6/ege_ile_gaga.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_3_6_02",
+        "title": "Ege ile Gaga Tüm Videolar",
+        "ageRange": "3-6",
+        "category": "Çizgi Film/Ders",
+        "sourceOwner": "YouTube",
+        "sourceUrl": "https://www.youtube.com/playlist?list=PLA5dyskGy4cs9-lOBQA5nJYhjYhA6H9Kq",
+        "targetSkills": [
+          "doğa kelimeleri",
+          "dikkat",
+          "gözlem"
+        ],
+        "integrationNotes": "Resmi/ilgili playlist; bölüm bazlı seçim yapılmalı.",
+        "thumbnailFileSuggested": "assets/images/videos/3_6/ege_ile_gaga_tum_videolar.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_3_6_03",
+        "title": "Masal Kitabı",
+        "ageRange": "3-6",
+        "category": "Hikaye Videosu",
+        "sourceOwner": "TRT Çocuk",
+        "sourceUrl": "https://www.trtcocuk.net.tr/masal-kitabi",
+        "targetSkills": [
+          "dinleme",
+          "olay sırası",
+          "masal dili"
+        ],
+        "integrationNotes": "Hikayeler bölümüyle de entegre edilebilir.",
+        "thumbnailFileSuggested": "assets/images/videos/3_6/masal_kitabi.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_3_6_04",
+        "title": "Canım Kardeşim 1. Bölüm",
+        "ageRange": "3-6",
+        "category": "Çizgi Film",
+        "sourceOwner": "TRT Çocuk",
+        "sourceUrl": "https://www.trtcocuk.net.tr/video/canim-kardesim-1",
+        "targetSkills": [
+          "aile",
+          "ev",
+          "duygu kelimeleri"
+        ],
+        "integrationNotes": "Günlük yaşam ve aile ünitesi için uygundur.",
+        "thumbnailFileSuggested": "assets/images/videos/3_6/canim_kardesim_1_bolum.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_3_6_05",
+        "title": "Renkler Şarkısı",
+        "ageRange": "3-6",
+        "category": "Şarkılar",
+        "sourceOwner": "MiniYo YouTube",
+        "sourceUrl": "https://www.youtube.com/watch?v=wrqOealh-pU",
+        "targetSkills": [
+          "renkler",
+          "nesne eşleştirme"
+        ],
+        "integrationNotes": "Kısa izleme + kelime kartı görevi yapılabilir.",
+        "thumbnailFileSuggested": "assets/images/videos/3_6/renkler_sarkisi.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_3_6_06",
+        "title": "Sayılar, Şekiller, Renkler",
+        "ageRange": "3-6",
+        "category": "Şarkılar/Ders",
+        "sourceOwner": "Adisebaba TV",
+        "sourceUrl": "https://www.youtube.com/watch?v=keGDT0lNEEU",
+        "targetSkills": [
+          "sayılar",
+          "şekiller",
+          "renkler"
+        ],
+        "integrationNotes": "Uzun video ise uygulamada sadece önerilen kısa bölüm verilmelidir.",
+        "thumbnailFileSuggested": "assets/images/videos/3_6/sayilar_sekiller_renkler.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_3_6_07",
+        "title": "Akıllı Tavşan Momo Tüm Videolar",
+        "ageRange": "3-6",
+        "category": "Çizgi Film",
+        "sourceOwner": "YouTube",
+        "sourceUrl": "https://www.youtube.com/playlist?list=PLA5dyskGy4cvYaZFKONFCKftzaCGhCSmd",
+        "targetSkills": [
+          "problem çözme",
+          "sosyal kelimeler"
+        ],
+        "integrationNotes": "Ebeveyn filtrelemesiyle seçilecek.",
+        "thumbnailFileSuggested": "assets/images/videos/3_6/akilli_tavsan_momo_tum_videolar.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      }
+    ],
+    "6-10": [
+      {
+        "videoId": "vid_6_10_01",
+        "title": "Pırıl",
+        "ageRange": "6-10",
+        "category": "Ders/Çizgi Film",
+        "sourceOwner": "TRT Çocuk",
+        "sourceUrl": "https://www.trtcocuk.net.tr/piril",
+        "targetSkills": [
+          "sayılar",
+          "problem çözme",
+          "matematik dili"
+        ],
+        "integrationNotes": "Sayılar, ölçme ve problem çözme için uygun.",
+        "thumbnailFileSuggested": "assets/images/videos/6_10/piril.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_6_10_02",
+        "title": "Pırıl — Sayıların Gizemi Film Şarkısı",
+        "ageRange": "6-10",
+        "category": "Şarkılar/Ders",
+        "sourceOwner": "TRT Çocuk",
+        "sourceUrl": "https://www.trtcocuk.net.tr/video/piril-sayilarin-gizemi-film-sarkisi",
+        "targetSkills": [
+          "sayılar",
+          "ritim",
+          "tekrar"
+        ],
+        "integrationNotes": "Sayı ünitesi sonrası pekiştirme videosu.",
+        "thumbnailFileSuggested": "assets/images/videos/6_10/piril_sayilarin_gizemi_film_sarkisi.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_6_10_03",
+        "title": "Pırıl — Üç Basamaklı Acil Sayılar",
+        "ageRange": "6-10",
+        "category": "Ders/Çizgi Film",
+        "sourceOwner": "TRT Çocuk YouTube",
+        "sourceUrl": "https://www.youtube.com/watch?v=kJ9Sm646tHs",
+        "targetSkills": [
+          "sayılar",
+          "acil durum kelimeleri"
+        ],
+        "integrationNotes": "Acil numaralar ve toplum bilgisiyle eşleştirilebilir.",
+        "thumbnailFileSuggested": "assets/images/videos/6_10/piril_uc_basamakli_acil_sayilar.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_6_10_04",
+        "title": "Rafadan Tayfa",
+        "ageRange": "6-10",
+        "category": "Çizgi Film",
+        "sourceOwner": "TRT Çocuk",
+        "sourceUrl": "https://www.trtcocuk.net.tr/rafadan-tayfa",
+        "targetSkills": [
+          "sosyal yaşam",
+          "mahalle kültürü",
+          "diyalog"
+        ],
+        "integrationNotes": "Dil ve sosyal iletişim becerisi için 6+ grupta kullanılabilir.",
+        "thumbnailFileSuggested": "assets/images/videos/6_10/rafadan_tayfa.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_6_10_05",
+        "title": "Rafadan Tayfa Tüm Videolar",
+        "ageRange": "6-10",
+        "category": "Çizgi Film",
+        "sourceOwner": "YouTube",
+        "sourceUrl": "https://www.youtube.com/playlist?list=PLA5dyskGy4ct1sc-jEiA_lJb-1hGhFT5K",
+        "targetSkills": [
+          "dinleme",
+          "diyalog",
+          "sosyal kelimeler"
+        ],
+        "integrationNotes": "Daha uzun içerik olduğu için ekran süresi limitiyle kullanılmalı.",
+        "thumbnailFileSuggested": "assets/images/videos/6_10/rafadan_tayfa_tum_videolar.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_6_10_06",
+        "title": "Kız Kulesi Masalları",
+        "ageRange": "6-10",
+        "category": "Hikaye Videosu",
+        "sourceOwner": "TRT Çocuk",
+        "sourceUrl": "https://www.trtcocuk.net.tr/kiz-kulesi-masallari",
+        "targetSkills": [
+          "masal dili",
+          "kültürel kelimeler"
+        ],
+        "integrationNotes": "Hikaye dinleme + anlama soruları için uygun.",
+        "thumbnailFileSuggested": "assets/images/videos/6_10/kiz_kulesi_masallari.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      },
+      {
+        "videoId": "vid_6_10_07",
+        "title": "Kaf Dağı Masalları",
+        "ageRange": "6-10",
+        "category": "Hikaye Videosu",
+        "sourceOwner": "TRT Çocuk",
+        "sourceUrl": "https://www.trtcocuk.net.tr/kaf-dagi-masallari",
+        "targetSkills": [
+          "masal",
+          "olay örgüsü",
+          "soyut kelimeler"
+        ],
+        "integrationNotes": "Daha uzun hikayeler için uygun.",
+        "thumbnailFileSuggested": "assets/images/videos/6_10/kaf_dagi_masallari.jpg",
+        "isExternalStream": true,
+        "needsLicenseCheck": true
+      }
+    ]
+  }
+}

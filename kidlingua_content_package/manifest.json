@@ -1,0 +1,24 @@
+{
+  "packageName": "KidLingua Content Package",
+  "createdDate": "2026-05-03",
+  "files": [
+    "00_README_Dosya_Yapisi.md",
+    "01_kelime_ve_uniteler.json",
+    "02_hikayeler_ve_sesli_kaynaklar.json",
+    "03_videolar_yas_grubuna_gore.json",
+    "04_medya_teknik_gereksinimler.md",
+    "05_ai_nlp_ebeveyn_paneli_detaylari.md",
+    "06_backend_json_model_onerisi.md",
+    "07_kaynaklar_ve_lisans_notlari.md"
+  ],
+  "summary": {
+    "totalAgeGroups": 3,
+    "totalUnits": 26,
+    "totalWordItems": 302,
+    "wordItemsByAgeRange": {
+      "0-3": 68,
+      "3-6": 120,
+      "6-10": 114
+    }
+  }
+}
