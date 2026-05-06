@@ -1,0 +1,420 @@
+{
+  "project": "KidLingua",
+  "version": "1.0-story-listening-sources",
+  "createdDate": "2026-05-03",
+  "mainRule": "Hikaye bölümünde seslendirilmiş içerik önceliklidir. Kaynağı hazır sesliyse link/embedded kullan; özgün hikayeyse mutlaka MP3 seslendirme üret.",
+  "storySources": [
+    {
+      "sourceId": "src_trt_dinle_cocuk_masallari",
+      "name": "TRT Dinle — Çocuk Masalları",
+      "url": "https://www.trtdinle.com/playlist/cocuk-masallari-28114729",
+      "type": "audio_playlist",
+      "audioAvailable": true,
+      "recommendedAgeRange": [
+        "3-6",
+        "6-10"
+      ],
+      "usage": "Uygulama içinde doğrudan dosya olarak indirmek yerine resmi kaynağa yönlendirme veya lisanslı kullanım tercih edilmeli.",
+      "whyUseful": "Seslendirilmiş masal/dinleme içeriği için en uygun kaynaklardan biri."
+    },
+    {
+      "sourceId": "src_trt_cocuk_kitaplik",
+      "name": "TRT Çocuk Kitaplık: Oku, Dinle",
+      "url": "https://apps.apple.com/tr/app/trt-%C3%A7ocuk-kitapl%C4%B1k-oku-dinle/id1549968402",
+      "type": "mobile_app_audio_books",
+      "audioAvailable": true,
+      "recommendedAgeRange": [
+        "4+",
+        "3-6",
+        "6-10"
+      ],
+      "usage": "İçerikler uygulama içindedir; KidLingua için referans/kıyas ve kaynak önerisi olarak kullanılabilir. Kopyalama için izin gerekir.",
+      "whyUseful": "Sesli, resimli ve animasyonlu çocuk kitapları; yaşa uygun sıralama ve ebeveyn paneli fikri için güçlü referans."
+    },
+    {
+      "sourceId": "src_trt_cocuk_masal_kitabi",
+      "name": "TRT Çocuk — Masal Kitabı",
+      "url": "https://www.trtcocuk.net.tr/masal-kitabi",
+      "type": "video_story_series",
+      "audioAvailable": true,
+      "recommendedAgeRange": [
+        "3-6"
+      ],
+      "usage": "Resmi video sayfasına yönlendirme/embedded player uygun olabilir; indirme veya yeniden dağıtım için izin gerekir.",
+      "whyUseful": "Masal anlatımı + görsel içerik; dinleme ve izleme bölümü için hazır örnek."
+    },
+    {
+      "sourceId": "src_kiz_kulesi_masallari",
+      "name": "TRT Çocuk — Kız Kulesi Masalları",
+      "url": "https://www.trtcocuk.net.tr/kiz-kulesi-masallari",
+      "type": "video_story_series",
+      "audioAvailable": true,
+      "recommendedAgeRange": [
+        "6-10"
+      ],
+      "usage": "Resmi sayfaya yönlendirme/embedded player; telif kontrolü şart.",
+      "whyUseful": "Türkçe masal kültürü ve daha uzun dinleme pratiği için uygun."
+    },
+    {
+      "sourceId": "src_kaf_dagi_masallari",
+      "name": "TRT Çocuk — Kaf Dağı Masalları",
+      "url": "https://www.trtcocuk.net.tr/kaf-dagi-masallari",
+      "type": "video_story_series",
+      "audioAvailable": true,
+      "recommendedAgeRange": [
+        "6-10"
+      ],
+      "usage": "Resmi sayfaya yönlendirme/embedded player; telif kontrolü şart.",
+      "whyUseful": "Dinleme, olay örgüsü takibi ve kelime gelişimi için kullanılabilir."
+    },
+    {
+      "sourceId": "src_ebeveyn_akademisi_masallar",
+      "name": "TRT Çocuk Ebeveyn Akademisi — Masallar",
+      "url": "https://ebeveynakademisi.trtcocuk.net.tr/etkinlik?kategori=masallar",
+      "type": "story_text_activity",
+      "audioAvailable": false,
+      "recommendedAgeRange": [
+        "3-6",
+        "6-10"
+      ],
+      "usage": "Metin/etkinlik olarak referans. Sesli kullanım için kendi seslendirme veya TTS kaydı gerekir.",
+      "whyUseful": "Mete ile Büke, Keloğlan ile Şehzade, Geveze Kurbağa gibi masal başlıkları içerir."
+    },
+    {
+      "sourceId": "src_storyweaver_tr",
+      "name": "StoryWeaver — Turkish stories",
+      "url": "https://storyweaver.org.in/fa/stories?language=Turkish&query=&sort=Ratings",
+      "type": "open_story_library",
+      "audioAvailable": "varies_by_story",
+      "recommendedAgeRange": [
+        "3-6",
+        "6-10"
+      ],
+      "usage": "Her kitap için lisans ve audio/video book olup olmadığı ayrı kontrol edilmeli. Açık lisanslı uygun hikayeler seçilebilir.",
+      "whyUseful": "Türkçe ve çok dilli çocuk hikayeleri; bazı içerikler sesli/video kitap formatı sunabilir."
+    },
+    {
+      "sourceId": "src_tubitak_bilim_cocuk_podcast",
+      "name": "TÜBİTAK Bilim Çocuk — Podcast/Sesli Yayınlar",
+      "url": "https://open.spotify.com/show/2DpOlhJQrCBLUSPAKmsWhW",
+      "type": "educational_audio_podcast",
+      "audioAvailable": true,
+      "recommendedAgeRange": [
+        "6-10"
+      ],
+      "usage": "Hikaye değil; bilgilendirici dinleme etkinliği olarak kullanılabilir.",
+      "whyUseful": "Kısa bilimsel dinleme içerikleri; 6-10 yaş grubu için kelime ve merak gelişimini destekler."
+    }
+  ],
+  "internalOriginalStoryPlan": [
+    {
+      "storyId": "story_original_001",
+      "title": "Minik Kedinin Günü",
+      "ageRange": "0-3",
+      "durationTarget": "3 dk",
+      "sourceType": "KidLingua özgün hikaye",
+      "sourceUrl": null,
+      "needsOwnVoiceover": true,
+      "audioFile": "assets/audio/stories/0_3/minik_kedinin_gunu.mp3",
+      "coverImage": "assets/images/stories/0_3/minik_kedinin_gunu.png",
+      "targetWords": [
+        "kedi",
+        "süt",
+        "uyku",
+        "anne"
+      ],
+      "summary": "Kısa tekrar cümleleriyle kedi, süt, anne ve uyku kelimelerini pekiştirir.",
+      "listeningMode": "Hikaye bittikten sonra tamamlandı olarak işaretlenir; 2-3 basit anlama sorusu eklenebilir."
+    },
+    {
+      "storyId": "story_original_002",
+      "title": "Topun Yolculuğu",
+      "ageRange": "0-3",
+      "durationTarget": "4 dk",
+      "sourceType": "KidLingua özgün hikaye",
+      "sourceUrl": null,
+      "needsOwnVoiceover": true,
+      "audioFile": "assets/audio/stories/0_3/topun_yolculugu.mp3",
+      "coverImage": "assets/images/stories/0_3/topun_yolculugu.png",
+      "targetWords": [
+        "top",
+        "renk",
+        "yuvarlanmak"
+      ],
+      "summary": "Top farklı renkli nesnelerin yanından geçer; renk ve hareket kelimeleri tekrar edilir.",
+      "listeningMode": "Hikaye bittikten sonra tamamlandı olarak işaretlenir; 2-3 basit anlama sorusu eklenebilir."
+    },
+    {
+      "storyId": "story_original_003",
+      "title": "Güneş Nerede?",
+      "ageRange": "0-3",
+      "durationTarget": "3 dk",
+      "sourceType": "KidLingua özgün hikaye",
+      "sourceUrl": null,
+      "needsOwnVoiceover": true,
+      "audioFile": "assets/audio/stories/0_3/gunes_nerede.mp3",
+      "coverImage": "assets/images/stories/0_3/gunes_nerede.png",
+      "targetWords": [
+        "güneş",
+        "ay",
+        "gece",
+        "gündüz"
+      ],
+      "summary": "Gündüz-gece ayrımını basit görsellerle anlatır.",
+      "listeningMode": "Hikaye bittikten sonra tamamlandı olarak işaretlenir; 2-3 basit anlama sorusu eklenebilir."
+    },
+    {
+      "storyId": "story_original_004",
+      "title": "Bebeğin Hayvanları",
+      "ageRange": "0-3",
+      "durationTarget": "4 dk",
+      "sourceType": "KidLingua özgün hikaye",
+      "sourceUrl": null,
+      "needsOwnVoiceover": true,
+      "audioFile": "assets/audio/stories/0_3/bebegin_hayvanlari.mp3",
+      "coverImage": "assets/images/stories/0_3/bebegin_hayvanlari.png",
+      "targetWords": [
+        "kedi",
+        "köpek",
+        "kuş",
+        "balık"
+      ],
+      "summary": "Hayvan sesleriyle dinleme ve taklit etkinliği yapılır.",
+      "listeningMode": "Hikaye bittikten sonra tamamlandı olarak işaretlenir; 2-3 basit anlama sorusu eklenebilir."
+    },
+    {
+      "storyId": "story_original_005",
+      "title": "Orman Macerası",
+      "ageRange": "3-6",
+      "durationTarget": "5 dk",
+      "sourceType": "KidLingua özgün hikaye",
+      "sourceUrl": null,
+      "needsOwnVoiceover": true,
+      "audioFile": "assets/audio/stories/3_6/orman_macerasi.mp3",
+      "coverImage": "assets/images/stories/3_6/orman_macerasi.png",
+      "targetWords": [
+        "ağaç",
+        "orman",
+        "hayvan",
+        "arkadaş"
+      ],
+      "summary": "Baykuş maskotu ormanda yön bulur ve hayvanlarla tanışır.",
+      "listeningMode": "Hikaye bittikten sonra tamamlandı olarak işaretlenir; 2-3 basit anlama sorusu eklenebilir."
+    },
+    {
+      "storyId": "story_original_006",
+      "title": "Küçük Bahçıvan",
+      "ageRange": "3-6",
+      "durationTarget": "4 dk",
+      "sourceType": "KidLingua özgün hikaye",
+      "sourceUrl": null,
+      "needsOwnVoiceover": true,
+      "audioFile": "assets/audio/stories/3_6/kucuk_bahcivan.mp3",
+      "coverImage": "assets/images/stories/3_6/kucuk_bahcivan.png",
+      "targetWords": [
+        "çiçek",
+        "su",
+        "toprak",
+        "büyümek"
+      ],
+      "summary": "Tohum ekme, sulama ve büyüme süreci anlatılır.",
+      "listeningMode": "Hikaye bittikten sonra tamamlandı olarak işaretlenir; 2-3 basit anlama sorusu eklenebilir."
+    },
+    {
+      "storyId": "story_original_007",
+      "title": "Renklerin Dansı",
+      "ageRange": "3-6",
+      "durationTarget": "5 dk",
+      "sourceType": "KidLingua özgün hikaye",
+      "sourceUrl": null,
+      "needsOwnVoiceover": true,
+      "audioFile": "assets/audio/stories/3_6/renklerin_dansi.mp3",
+      "coverImage": "assets/images/stories/3_6/renklerin_dansi.png",
+      "targetWords": [
+        "renk",
+        "karışmak",
+        "boyamak"
+      ],
+      "summary": "Ana renklerin karışımı çocuk dostu şekilde öğretilir.",
+      "listeningMode": "Hikaye bittikten sonra tamamlandı olarak işaretlenir; 2-3 basit anlama sorusu eklenebilir."
+    },
+    {
+      "storyId": "story_original_008",
+      "title": "Yağmurun Sesi",
+      "ageRange": "3-6",
+      "durationTarget": "4 dk",
+      "sourceType": "KidLingua özgün hikaye",
+      "sourceUrl": null,
+      "needsOwnVoiceover": true,
+      "audioFile": "assets/audio/stories/3_6/yagmurun_sesi.mp3",
+      "coverImage": "assets/images/stories/3_6/yagmurun_sesi.png",
+      "targetWords": [
+        "yağmur",
+        "bulut",
+        "gökkuşağı"
+      ],
+      "summary": "Ses efektleriyle yağmur, bulut ve renkler öğretilir.",
+      "listeningMode": "Hikaye bittikten sonra tamamlandı olarak işaretlenir; 2-3 basit anlama sorusu eklenebilir."
+    },
+    {
+      "storyId": "story_original_009",
+      "title": "Deniz Altı Komşuları",
+      "ageRange": "3-6",
+      "durationTarget": "6 dk",
+      "sourceType": "KidLingua özgün hikaye",
+      "sourceUrl": null,
+      "needsOwnVoiceover": true,
+      "audioFile": "assets/audio/stories/3_6/deniz_alti_komsulari.mp3",
+      "coverImage": "assets/images/stories/3_6/deniz_alti_komsulari.png",
+      "targetWords": [
+        "balık",
+        "deniz",
+        "renkli",
+        "yüzmek"
+      ],
+      "summary": "Deniz canlıları ve renkler hikaye içinde tekrar edilir.",
+      "listeningMode": "Hikaye bittikten sonra tamamlandı olarak işaretlenir; 2-3 basit anlama sorusu eklenebilir."
+    },
+    {
+      "storyId": "story_original_010",
+      "title": "Doktorun Günü",
+      "ageRange": "6-10",
+      "durationTarget": "6 dk",
+      "sourceType": "KidLingua özgün hikaye",
+      "sourceUrl": null,
+      "needsOwnVoiceover": true,
+      "audioFile": "assets/audio/stories/6_10/doktorun_gunu.mp3",
+      "coverImage": "assets/images/stories/6_10/doktorun_gunu.png",
+      "targetWords": [
+        "hastane",
+        "doktor",
+        "hasta",
+        "iyileşmek"
+      ],
+      "summary": "Sağlık, meslek ve neden-sonuç ilişkisi kurulur.",
+      "listeningMode": "Hikaye bittikten sonra tamamlandı olarak işaretlenir; 2-3 basit anlama sorusu eklenebilir."
+    },
+    {
+      "storyId": "story_original_011",
+      "title": "Mevsimler Yarışıyor",
+      "ageRange": "6-10",
+      "durationTarget": "7 dk",
+      "sourceType": "KidLingua özgün hikaye",
+      "sourceUrl": null,
+      "needsOwnVoiceover": true,
+      "audioFile": "assets/audio/stories/6_10/mevsimler_yarisiyor.mp3",
+      "coverImage": "assets/images/stories/6_10/mevsimler_yarisiyor.png",
+      "targetWords": [
+        "ilkbahar",
+        "yaz",
+        "sonbahar",
+        "kış"
+      ],
+      "summary": "Dört mevsimin özellikleri karşılaştırmalı anlatılır.",
+      "listeningMode": "Hikaye bittikten sonra tamamlandı olarak işaretlenir; 2-3 basit anlama sorusu eklenebilir."
+    },
+    {
+      "storyId": "story_original_012",
+      "title": "Kayıp Robot",
+      "ageRange": "6-10",
+      "durationTarget": "8 dk",
+      "sourceType": "KidLingua özgün hikaye",
+      "sourceUrl": null,
+      "needsOwnVoiceover": true,
+      "audioFile": "assets/audio/stories/6_10/kayip_robot.mp3",
+      "coverImage": "assets/images/stories/6_10/kayip_robot.png",
+      "targetWords": [
+        "robot",
+        "makine",
+        "tamir",
+        "arkadaş"
+      ],
+      "summary": "Teknoloji kelimeleri ve problem çözme anlatılır.",
+      "listeningMode": "Hikaye bittikten sonra tamamlandı olarak işaretlenir; 2-3 basit anlama sorusu eklenebilir."
+    },
+    {
+      "storyId": "story_original_013",
+      "title": "Kütüphanedeki Sır",
+      "ageRange": "6-10",
+      "durationTarget": "6 dk",
+      "sourceType": "KidLingua özgün hikaye",
+      "sourceUrl": null,
+      "needsOwnVoiceover": true,
+      "audioFile": "assets/audio/stories/6_10/kutuphanedeki_sir.mp3",
+      "coverImage": "assets/images/stories/6_10/kutuphanedeki_sir.png",
+      "targetWords": [
+        "kütüphane",
+        "kitap",
+        "okumak",
+        "keşif"
+      ],
+      "summary": "Okuma sevgisi ve merak duygusu desteklenir.",
+      "listeningMode": "Hikaye bittikten sonra tamamlandı olarak işaretlenir; 2-3 basit anlama sorusu eklenebilir."
+    }
+  ],
+  "externalStoryRecommendations": [
+    {
+      "title": "Mete ile Büke Masalı",
+      "ageRange": "6-10",
+      "sourceId": "src_ebeveyn_akademisi_masallar",
+      "audioAvailable": false,
+      "recommendedAction": "Metin seçilirse KidLingua için ayrıca seslendirme/TTS gerekir.",
+      "reason": "Geleneksel masal yapısı ve kültürel kelime öğrenimi."
+    },
+    {
+      "title": "Keloğlan ile Şehzade Masalı",
+      "ageRange": "6-10",
+      "sourceId": "src_ebeveyn_akademisi_masallar",
+      "audioAvailable": false,
+      "recommendedAction": "Metin temelli kaynak; dinleme için seslendirme gerekir.",
+      "reason": "Türk masal kahramanları ve olay örgüsü takibi."
+    },
+    {
+      "title": "Geveze Kurbağa Masalı",
+      "ageRange": "3-6",
+      "sourceId": "src_ebeveyn_akademisi_masallar",
+      "audioAvailable": false,
+      "recommendedAction": "Kısa çocuk seslendirmesiyle uygulama içi dinleme yapılabilir.",
+      "reason": "Hayvan ve konuşma teması; tekrar cümlelerine uygun."
+    },
+    {
+      "title": "Kararsız Maymun Masalı",
+      "ageRange": "3-6",
+      "sourceId": "src_ebeveyn_akademisi_masallar",
+      "audioAvailable": false,
+      "recommendedAction": "Seslendirme sonrası görev olarak kullanılabilir.",
+      "reason": "Karar verme, duygu ve hayvan kelimeleri."
+    },
+    {
+      "title": "TRT Dinle çocuk masalları içinden kısa masal seçimi",
+      "ageRange": "3-6 / 6-10",
+      "sourceId": "src_trt_dinle_cocuk_masallari",
+      "audioAvailable": true,
+      "recommendedAction": "Uygulama içi doğrudan linkleme veya lisanslı entegrasyon.",
+      "reason": "Hazır seslendirilmiş içerik gereksinimini karşılar."
+    },
+    {
+      "title": "TRT Çocuk Kitaplık sesli kitapları",
+      "ageRange": "4+",
+      "sourceId": "src_trt_cocuk_kitaplik",
+      "audioAvailable": true,
+      "recommendedAction": "Kaynak referansı olarak kullan; içerik kopyalamak için izin al.",
+      "reason": "Oku-dinle yapısı KidLingua hikaye moduna çok benzer."
+    },
+    {
+      "title": "StoryWeaver Türkçe sesli/video kitap seçimi",
+      "ageRange": "3-6 / 6-10",
+      "sourceId": "src_storyweaver_tr",
+      "audioAvailable": "varies_by_story",
+      "recommendedAction": "Her kitabın lisansını, yaş seviyesini ve sesli olup olmadığını tek tek kontrol et.",
+      "reason": "Açık lisanslı hikaye havuzu oluşturmak için uygun olabilir."
+    }
+  ],
+  "implementationNotes": [
+    "Her hikaye için title, ageRange, duration, coverImage, audioUrl/audioFile, targetWords ve source bilgisi tutulmalı.",
+    "Telifli TRT/YouTube içerikleri indirilip uygulama paketine konulmamalı; resmi player/link veya izinli kullanım tercih edilmeli.",
+    "0-3 yaşta hikaye ekranı mümkünse ebeveyn eşliğinde ses odaklı ve çok kısa tutulmalı.",
+    "3-6 yaşta 3-6 dakika; 6-10 yaşta 5-8 dakika hedef süre uygundur.",
+    "Her hikayeden sonra 2 soru: “Hikayede kim vardı?” ve “Hangi kelimeyi duydun?” gibi basit ölçüm yapılabilir."
+  ]
+}
