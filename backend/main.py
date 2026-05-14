@@ -30,9 +30,9 @@ app.add_middleware(
 
 MONGODB_URI = os.getenv(
     "MONGODB_URI",
-    "mongodb+srv://240541167:Direk714@yga.1fiz7v2.mongodb.net/?appName=YGA",
+    "mongodb+srv://240541167:vin511CqNqT1Z0AE@yga.1fiz7v2.mongodb.net/?appName=YGA",
 )  # Sağlanan MongoDB bağlantı URI'si; ortam değişkeniyle de geçilebilir
-MONGO_DB_NAME = os.getenv("MONGO_DB_NAME", "kidlingua")  # Kullanılacak MongoDB veritabanı adı
+MONGO_DB_NAME = os.getenv("MONGO_DB_NAME", "YGA")  # Kullanılacak MongoDB veritabanı adı
 MONGO_SERVER_SELECTION_TIMEOUT_MS = 5000  # MongoDB sunucu seçimi için zaman aşımı
 mongo_client: Optional[AsyncIOMotorClient] = None  # Mongo istemcisini saklamaya hazır global değişken
 mongo_db: Optional[Any] = None  # Mongo veritabanı bağlantısını saklamak için global değişken
